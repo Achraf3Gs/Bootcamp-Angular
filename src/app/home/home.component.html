@@ -1,4 +1,8 @@
 <h1>Composant Home</h1>
+<img [src]="logo"/>
+<button (click)="display()"class="btn btn-primary">Cliquez-Ici</button>
+
+<br/>
 <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
 <span class="sr-only">Loading...</span>
 <span class="fa-stack fa-lg">
@@ -10,7 +14,8 @@
 <ul>
   <li *ngFor="let e of etudiants">{{e|uppercase}}</li>
 </ul>
-<table  class="table table-bordered table-striped"><tr><th>Id User</th><th>Id Post</th><th>Title</th><th>Body</th></tr>
+<table  class="table table-bordered table-striped" [hidden]="dispalyed">
+  <tr><th>Id User</th><th>Id Post</th><th>Title</th><th>Body</th></tr>
   <tr *ngFor="let post of mesPosts">
     <td>{{post.userId}}</td>
     <td>{{post.id}}</td>
