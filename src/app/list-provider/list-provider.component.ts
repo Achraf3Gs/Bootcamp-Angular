@@ -15,28 +15,28 @@ export class ListProviderComponent implements OnInit {
  constructor(private service: ProviderService,  private router: Router) { }
 
  ngOnInit() {
-  this. service. listProviders(). subscribe(
+  this.service.listProviders().subscribe(
  response => {
- this. providers = response;
+ this.providers = response;
  }
  )
 
 }
 deleteProvider(myObj:any) {
-  //console.log(this.provider);
-  this. service. deleteProvider(myObj). subscribe(response => {
-  console. log(response);
-  this. refreshListProviders();
+
+  this.service.deleteProvider(myObj). subscribe(response => {
+  console.log(response);
+  this.refreshListProviders();
    })
   }
   refreshListProviders() {
-  this. service. listProviders(). subscribe(
+  this.service.listProviders().subscribe(
   response => {
-  this. providers = response;
+  this.providers = response;
   }
   );
   }
   updateProvider(myObj:any) {
-    this. router. navigate(['updateProvider' + '/' + myObj['id' ]]);
+    this.router.navigate(['updateProvider' + '/' + myObj['id' ]]);
     }
 }

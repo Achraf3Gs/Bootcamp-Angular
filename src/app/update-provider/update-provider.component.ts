@@ -12,7 +12,7 @@ export class UpdateProviderComponent implements OnInit {
   providerToUpdate:any;
   name:any;
   email:any;
-  adresse:any;
+  address:any;
 
   constructor(private service: ProviderService, private router: Router, private route: ActivatedRoute) { }
 
@@ -23,11 +23,11 @@ export class UpdateProviderComponent implements OnInit {
       }
     );
     this.service.getProvider(this.id).subscribe(
-      (response: any) => {
+      (response:any) => {
 
         this.name = response["name"];
         this.email = response["email"];
-        this.adresse = response["adresse"];
+        this.address = response["address"];
       }
     );
   }
@@ -37,7 +37,7 @@ export class UpdateProviderComponent implements OnInit {
     this.providerToUpdate = {
       "name": this.name,
       "email": this.email,
-      "address": this.adresse,
+      "address": this.address,
       "id": this.id
     }
     this.service.updateProvider(this.providerToUpdate).subscribe(

@@ -13,11 +13,11 @@ export class AddProviderComponent implements OnInit {
   ngOnInit() {
   }
   createProvider(myform:any) {
-    this. service. createProvider(myform). subscribe(
+    this.service.createProvider(myform).subscribe(
     response => {
-    console. log(response);
+    console.log(response);
     }
     );
-    this. router. navigate(['listProvider' ]);
+    this.router.navigate(['listProvider' ]);
     }
    }

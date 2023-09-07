@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlProvider:"autre url"
+  urlProvider:"http://127.0.0.1:8585/amsrest/providers"
 };
