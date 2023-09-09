@@ -12,6 +12,9 @@ import { ListProviderComponent } from './list-provider/list-provider.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { BasicAuthInterceptorService } from './services/basic-auth-intercepteur.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,9 @@ import { LogoutComponent } from './logout/logout.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ {
+    provide:HTTP_INTERCEPTORS, useClass:BasicAuthInterceptorService, multi:true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
